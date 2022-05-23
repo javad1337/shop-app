@@ -29,8 +29,7 @@ class Product with ChangeNotifier {
     isFavorite = !isFavorite;
     notifyListeners();
 
-    final url = Uri.https('shop-app-85f6c-default-rtdb.firebaseio.com',
-        '/userFavorites/$userId/$id.json', {'auth': token});
+    final url = Uri.https('YOUR URL');
     try {
       final response = await http.put(url, body: json.encode(isFavorite));
       if (response.statusCode >= 400) {
